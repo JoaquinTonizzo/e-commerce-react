@@ -1,0 +1,12 @@
+.navbar {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+.navbar h1 {
+    padding: 0px 10px;
+    font-size: 26px;
+}

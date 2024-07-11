@@ -1,0 +1,15 @@
+.cartContainer {
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+}
+
+.cartContainer span {
+    font-size: 1.2rem; 
+    font-weight: bold; 
+}
+
+.cartContainer svg {
+    font-size: 1.5rem; 
+}
