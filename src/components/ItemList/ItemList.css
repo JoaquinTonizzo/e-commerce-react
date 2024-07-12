@@ -1,0 +1,10 @@
+.ListGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 10%;
+    row-gap: 30px;
+    column-gap: 20px;
+}
