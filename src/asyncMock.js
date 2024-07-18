@@ -32,3 +32,35 @@ export const getProducts = () => {
             });
     });
 };
+
+export const getProductById = (id) => {
+    const API_URL_ID = `https://api.mercadolibre.com/items/${id}`;
+    return new Promise((resolve, reject) => {
+        fetch(API_URL_ID)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al realizar la solicitud a la API de Mercado Libre.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data) {
+                    const product = {
+                        id: data.id,
+                        name: data.title,
+                        price: data.price,
+                        img: data.thumbnail,
+                        description: data.title,
+                        stock: data.available_quantity,
+                        category: data.category_id
+                    };
+                    resolve(product);
+                } else {
+                    reject(new Error('Producto no encontrado.'));
+                }
+            })
+            .catch(() => {
+                reject(new Error('Error al obtener el producto.'));
+            });
+    });
+};
