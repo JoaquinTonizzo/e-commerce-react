@@ -1,0 +1,28 @@
+.ItemDetail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 100px;
+    margin: 20px;
+}
+
+.DetailImg {
+    width: 40%;
+}
+
+.DetailInfo {
+    width: 40%;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .ItemDetail {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .DetailImg, .DetailInfo {
+        width: 80%;
+    }
+}

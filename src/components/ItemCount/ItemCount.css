@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    color: white;
 }
 
 .Controls {
@@ -24,5 +25,6 @@
 
 .Agregar {
     width: 200px;
+    color: white;
 }
 
