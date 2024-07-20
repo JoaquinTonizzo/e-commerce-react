@@ -1,8 +1,23 @@
-# React + Vite
+= Proyecto Final - React Coderhouse 💻
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+== Descripción
 
-Currently, two official plugins are available:
+**Ecommerce-React** es una aplicación de comercio electrónico desarrollada como proyecto final del curso de React de Coderhouse. Permite a los usuarios explorar una variedad de productos, agregarlos al carrito y gestionar sus compras de manera eficiente y amigable.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+== Funcionalidades 🎮
+
+- **Exploración de productos:** Lista detallada de productos disponibles.
+- **Carrito de compras:** Funcionalidad para añadir y gestionar productos seleccionados.
+- **Filtrado de productos:** Opciones para filtrar productos por categoría.
+- **Detalle de producto:** Vista detallada de cada producto con información adicional.
+
+== Tecnologías Utilizadas 🛠️
+
+- **Frontend:** HTML, CSS, JavaScript.
+- **Librerías y Frameworks:** React, React Router.
+
+== Contacto
+
+Para más información, puedes contactar a [joaquintonizzo1@gmail.com](mailto:joaquintonizzo1@gmail.com).
+
+¡Gracias por tu interés!
