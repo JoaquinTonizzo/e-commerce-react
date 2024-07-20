@@ -1,8 +1,8 @@
-import React from 'react'
-import './Item.css'
-import ItemCount from './../ItemCount/ItemCount'
+import React from 'react';
+import './Item.css';
+import { Link } from 'react-router-dom'; // Asegúrate de importar Link
 
-const Item = ({name, price, img, stock}) => {
+const Item = ({ id, name, price, img, stock }) => { // Incluye id en las props
     return (
         <article className='CardItem'>
             <header className='Header'>
@@ -19,12 +19,14 @@ const Item = ({name, price, img, stock}) => {
                     Stock: {stock} 
                 </p>
             </section>
-            {/* <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log('Cantidad agregada ', quantity)}/> */}
             <footer className='ItemFooter'>
-                <button className='Button'>Ver detalle</button>
+                <Link to={`/item/${id}`} className='Button Link'
+                style={{ display: 'block', textDecoration: 'none', width: '100%', color:'white'}}>
+                    Ver detalle
+                </Link>
             </footer>
         </article>
-    )
+    );
 }
 
-export default Item
+export default Item;

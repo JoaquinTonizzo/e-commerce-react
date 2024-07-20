@@ -19,7 +19,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.Button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 5px 0px;
@@ -30,11 +30,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+.Button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
+.Button:focus,
+.Button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -46,7 +46,7 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button {
+  .Button {
     background-color: #f9f9f9;
   }
 }

@@ -18,3 +18,9 @@
 .cartContainer:hover {
     color: #646cff;
 }
+
+@media (max-width: 768px) {
+    .cartContainer {
+        padding-right: 0px;
+    }
+}

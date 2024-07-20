@@ -1,27 +1,29 @@
-import React from 'react'
-import './ItemDetailContainer.css'
-import { useState, useEffect } from 'react'
-import { getProductById } from './../../asyncMock'
-import ItemDetail from './../ItemDetail/ItemDetail'
+import React, { useState, useEffect } from 'react';
+import './ItemDetailContainer.css';
+import { getProductById } from './../../asyncMock';
+import ItemDetail from './../ItemDetail/ItemDetail';
+import Spinner from './../Spinner/Spinner';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState(null)
+    const [product, setProduct] = useState(null);
+    const { itemId } = useParams();
 
     useEffect(() => {
-        getProductById('MLA1442844788')
-        .then(response => {
-            setProduct(response)
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    }, [])
+        getProductById(itemId)
+            .then(response => {
+                setProduct(response);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }, [itemId]);
 
     return (
         <div className='ItemDetailContainer'>
-            <ItemDetail {...product} />
+            {product ? <ItemDetail {...product} /> : <Spinner/>}
         </div>
-    )
+    );
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom'; // Asegúrate de importar NavLink
 import './NavBar.css'; 
 import CartWidget from '../CartWidget/CartWidget';
 
@@ -11,15 +12,13 @@ const NavBar = () => {
 
     return (
         <nav className='Navbar'>
-            <a href="/"><h1>Tienda Online</h1></a>
+            <a href="/"><h1>Online Store</h1></a>
             <div className={`NavMenu ${showMenu ? 'show' : ''}`}>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">Store</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Contact</a></li>
-                    <CartWidget />
-                </ul>
+                <NavLink to="/">All Products</NavLink>
+                <NavLink to="/category/cellphone">Phones</NavLink>
+                <NavLink to="/category/notebook">Notebooks</NavLink>
+                <NavLink to="/category/smartwatch">Smartwatches</NavLink>
+                <CartWidget />
             </div>
             <div className="MenuToggle" onClick={toggleMenu}>
                 <div className={`hamburger ${showMenu ? 'active' : ''}`}>

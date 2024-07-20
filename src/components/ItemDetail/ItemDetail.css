@@ -3,17 +3,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    column-gap: 100px;
-    margin: 20px;
+    margin: 20px 100px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .DetailImg {
-    width: 40%;
+    width: 500px;
+    height: 500px;
 }
 
 .DetailInfo {
-    width: 40%;
-    color: white;
+    width: 50%;
+    color: black;
+    font-weight: bold;
 }
 
 @media (max-width: 768px) {
@@ -24,5 +28,10 @@
 
     .DetailImg, .DetailInfo {
         width: 80%;
+        height: auto;
+    }
+
+    .DetailInfo {
+        padding-bottom: 20px;
     }
 }

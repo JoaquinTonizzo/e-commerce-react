@@ -2,7 +2,7 @@
 import './ItemDetail.css';
 import ItemCount from './../ItemCount/ItemCount';
 
-const ItemDetail = ({ name, price, img, stock }) => {
+const ItemDetail = ({ name, price, img, description, category, stock }) => {
     return (
         <article className="ItemDetail">
             <img src={img} alt={name} className='DetailImg'/>
@@ -11,7 +11,8 @@ const ItemDetail = ({ name, price, img, stock }) => {
                     <h2>{name}</h2>
                 </header>
                 <section>
-                    <p className="DetailCategory">Categoría: {stock}</p>
+                    <p className='DetailDescriptio'>{description}</p>
+                    <p className="DetailCategory">Categoría: {category}</p>
                     <p className="DetailDescription">Descripción: {stock}</p>
                     <p className="DetailPrice">Precio: ${price}</p>
                 </section>
