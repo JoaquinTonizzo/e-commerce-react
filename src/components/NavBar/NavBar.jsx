@@ -18,7 +18,7 @@ const NavBar = () => {
                 <NavLink to="/category/cellphone">Phones</NavLink>
                 <NavLink to="/category/notebook">Notebooks</NavLink>
                 <NavLink to="/category/smartwatch">Smartwatches</NavLink>
-                <CartWidget />
+                <NavLink to="/cart"><CartWidget /></NavLink>
             </div>
             <div className="MenuToggle" onClick={toggleMenu}>
                 <div className={`hamburger ${showMenu ? 'active' : ''}`}>

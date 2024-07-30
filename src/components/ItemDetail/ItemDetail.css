@@ -20,6 +20,12 @@
     font-weight: bold;
 }
 
+Footer .Option {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+}
+
 @media (max-width: 768px) {
     .ItemDetail {
         flex-direction: column;

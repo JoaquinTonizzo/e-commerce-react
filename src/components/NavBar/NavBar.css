@@ -31,6 +31,10 @@
     display: none;
 }
 
+.NavMenu a.active {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .NavMenu {
         display: none;

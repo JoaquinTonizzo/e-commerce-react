@@ -130,7 +130,7 @@ const getProducts = () => {
 
 const getProductById = async (id) => {
     const products = await getProducts();
-    console.log('Products:', products); // Verifica los datos
+    console.log('Products:', products);
     console.log('Searching for ID:', id);
     const product = products.find(product => product.id == id);
     console.log('Found Product:', product);
