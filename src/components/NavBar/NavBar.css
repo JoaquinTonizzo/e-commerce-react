@@ -32,7 +32,7 @@
 }
 
 .NavMenu a.active {
-    text-decoration: underline;
+    color: #646cff;
 }
 
 @media (max-width: 768px) {

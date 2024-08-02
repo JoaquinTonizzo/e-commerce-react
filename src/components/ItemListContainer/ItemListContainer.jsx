@@ -1,44 +1,57 @@
-import './ItemListContainer.css';
-import ItemList from './../ItemList/ItemList'; 
-import React, { useEffect, useState } from 'react';
-import { getProducts, getProductsByCategory } from './../../asyncMock';
-import { useParams } from 'react-router-dom';  
-import Spinner from './../Spinner/Spinner';
+import "./ItemListContainer.css";
+import ItemList from "./../ItemList/ItemList";
+import React, { useEffect, useState } from "react";
+import { getProducts, getProductsByCategory } from "./../../asyncMock";
+import { useParams } from "react-router-dom";
+import Spinner from "./../Spinner/Spinner";
+
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "./../../services/firebase/firebaseConfig"; 
 
 const ItemListContainer = () => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState("");
-    const { categoryId } = useParams();
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const { categoryId } = useParams();
 
-    useEffect(() => {
-        const asyncFunc = categoryId ? getProductsByCategory : getProducts;
-        setLoading(true);
-        asyncFunc(categoryId)
-          .then(response => {
-            setProducts(response);
-          })
-          .catch(error => {
-            setError(error.message);
-          })
-          .finally(() => {
-            setLoading(false);
-          });
-    }, [categoryId]);
+  useEffect(() => {
+    setLoading(true);
+    const collectionRef = categoryId
+      ? query(collection(db, "items"), where("category", "==", categoryId))
+      : collection(db, "items");
 
-    if (loading) {
-        return <Spinner />;
-    }
+    getDocs(collectionRef).then((response) => {
+      const productsAdapted = response.docs.map((doc) => {
+        const data = doc.data();
+        return { id: doc.id, ...data };
+      });
+      setProducts(productsAdapted);
+    })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [categoryId]);
 
-    if (error) {
-        return <h2 style={{ color: 'white' }}>{error}</h2>;
-    }
+  if (loading) {
+    return <Spinner />;
+  }
 
-    return (
-        <div className='ItemListContainer'>
-            {products.length ? <ItemList products={products}/> : <p>No products found</p>}
-        </div>
-    );
-}
+  if (error) {
+    return <h2 style={{ color: "white" }}>{error}</h2>;
+  }
+
+  return (
+    <div className="ItemListContainer">
+      {products.length ? (
+        <ItemList products={products} />
+      ) : (
+        <p>No products found</p>
+      )}
+    </div>
+  );
+};
 
 export default ItemListContainer;

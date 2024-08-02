@@ -1,0 +1,15 @@
+.CheckoutContainer {
+    height: 100vh;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.Cartel {
+    font-size: 2em;
+    color: white;
+    height: 100vh;
+}

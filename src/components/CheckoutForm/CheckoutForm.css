@@ -1,0 +1,44 @@
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Form {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.Label {
+    display: block;
+    margin: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+.Input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 350px;
+}
+
+.ButtonCreate {
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    .Form {
+        width: 300px;
+        box-shadow: none;
+    }
+
+    .Input {
+        width: 250px;
+    }
+}

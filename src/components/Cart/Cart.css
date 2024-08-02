@@ -1,0 +1,17 @@
+.CartContainer {
+    height: 100vh;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.ButtonProducts, .ButtonClear, .ButtonCheckout {
+    padding: 10px;
+}
+
+.ButtonClear, .ButtonCheckout {
+    margin: 10px;
+}

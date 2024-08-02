@@ -20,6 +20,8 @@ h1 {
 }
 
 .Button {
+  color: white;
+  text-decoration: none;
   border-radius: 8px;
   border: 1px solid transparent;
   font-size: 1em;
