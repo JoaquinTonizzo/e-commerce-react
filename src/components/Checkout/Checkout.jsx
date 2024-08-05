@@ -1,6 +1,6 @@
 import "./Checkout.css";
 import { CartContext } from '../../context/CartContext';
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { getDocs, collection, query, where, writeBatch, Timestamp, addDoc } from "firebase/firestore";
 import { db } from "./../../services/firebase/firebaseConfig";
 import { Link } from 'react-router-dom'
@@ -28,43 +28,39 @@ const Checkout = () => {
             };
 
             const batch = writeBatch(db);
-
             const outOfStock = [];
-
             const ids = cart.map(prod => prod.id);
-
             const productsRef = collection(db, "products");
-
             const productsAddedFromFirestore = await getDocs(query(productsRef, where("id", "in", ids)));
-        
-        const { docs } = productsAddedFromFirestore
 
-        docs.forEach(doc => {
-            const dataDoc = doc.data();
-            const stockDb = dataDoc.stock;
+            const { docs } = productsAddedFromFirestore
 
-            const productAddedToCart = cart.find(prod => prod.id === doc.id);
-            const prodQuantity = productAddedToCart?.quantity;
+            docs.forEach(doc => {
+                const dataDoc = doc.data();
+                const stockDb = dataDoc.stock;
 
-            if (stockDb > prodQuantity) {
-                batch.update(doc.ref, { stock: stockDb - prodQuantity });
+                const productAddedToCart = cart.find(prod => prod.id === doc.id);
+                const prodQuantity = productAddedToCart?.quantity;
+
+                if (stockDb > prodQuantity) {
+                    batch.update(doc.ref, { stock: stockDb - prodQuantity });
+                } else {
+                    outOfStock.push({ id: doc.id, ...dataDoc });
+                }
+            })
+
+
+            if (outOfStock.length === 0) {
+                await batch.commit();
+
+                const orderRef = collection(db, "orders");
+                const orderAdded = await addDoc(orderRef, objOrder);
+
+                setOrderId(orderAdded.id);
+                clearCart();
             } else {
-                outOfStock.push({ id: doc.id, ...dataDoc });
+                console.error("Hay productos que están fuera de stock");
             }
-        })
-
-
-        if (outOfStock.length === 0) {
-            await batch.commit(); // Confirma la transacción batch
-
-            const orderRef = collection(db, "orders");
-            const orderAdded = await addDoc(orderRef, objOrder);
-
-            setOrderId(orderAdded.id);
-            clearCart();
-        } else {
-            console.error("Hay productos que están fuera de stock");
-        }
 
 
         } catch (error) {

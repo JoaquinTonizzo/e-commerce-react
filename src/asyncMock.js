@@ -36,7 +36,7 @@ const products = [
         stock: 15,
         category: 'cellphone'
     },
-    
+
     // Notebooks
     {
         id: 4,
@@ -74,7 +74,7 @@ const products = [
         stock: 12,
         category: 'notebook'
     },
-    
+
     // Smartwatches
     {
         id: 7,

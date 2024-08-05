@@ -7,10 +7,9 @@ export const CartContext = createContext({
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [total, setTotal] = useState(0);
-    const [itemCount, setItemCount] = useState(0); // Total de elementos en el carrito
+    const [itemCount, setItemCount] = useState(0);
 
     useEffect(() => {
-        // Calcula el total de precio y el total de elementos cada vez que el carrito cambia
         const calculateTotal = () => {
             const totalAmount = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
             setTotal(totalAmount);

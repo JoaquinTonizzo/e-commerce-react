@@ -31,9 +31,11 @@ h1 {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 .Button:hover {
   border-color: #646cff;
 }
+
 .Button:focus,
 .Button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -44,9 +46,11 @@ h1 {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   .Button {
     background-color: #f9f9f9;
   }
