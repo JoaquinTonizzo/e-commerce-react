@@ -26,18 +26,42 @@ Footer .Option {
     padding: 5px 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+
     .ItemDetail {
-        flex-direction: column;
-        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 100px;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
     }
 
-    .DetailImg, .DetailInfo {
-        width: 80%;
-        height: auto;
+    .DetailImg {
+        width: 300px;
+        height: 300px;
     }
-
+    
     .DetailInfo {
-        padding-bottom: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 765px) {
+    .ItemDetail {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+    
+    .DetailImg {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .DetailInfo {
+        width: 90%;
     }
 }

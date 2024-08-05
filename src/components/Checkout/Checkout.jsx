@@ -3,6 +3,8 @@ import { CartContext } from '../../context/CartContext';
 import React, { useState, useContext } from "react";
 import { getDocs, collection, query, where, writeBatch, Timestamp, addDoc } from "firebase/firestore";
 import { db } from "./../../services/firebase/firebaseConfig";
+import { Link } from 'react-router-dom'
+import Spinner from "./../Spinner/Spinner";
 
 import CheckoutForm from './../CheckoutForm/CheckoutForm';
 
@@ -73,16 +75,26 @@ const Checkout = () => {
     }
 
     if (loading) {
-        return <p className="Cartel">Se está generando su orden...</p>;
+        return (
+            <div>
+                <p className="Cartel">Se está generando su orden...</p>
+                <Spinner></Spinner>
+            </div>
+        );
     }
 
     if (orderId) {
-        return <p className="Cartel">El ID de su orden es: {orderId}</p>;
+        return (
+            <div className="InfoContainer">
+                <p className="Cartel">El ID de su orden es: {orderId}</p>
+                <Link to='/' className='Button ButtonProducts'>Volver al Inicio</Link>
+            </div>
+        );
     }
 
     return (
         <div className="CheckoutContainer">
-            <h3>Checkout</h3>
+            <h3 className="Title">Checkout</h3>
             <CheckoutForm onConfirm={createOrder} />
         </div>
     );

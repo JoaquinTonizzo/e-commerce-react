@@ -1,7 +1,6 @@
 import "./ItemListContainer.css";
 import ItemList from "./../ItemList/ItemList";
 import React, { useEffect, useState } from "react";
-import { getProducts, getProductsByCategory } from "./../../asyncMock";
 import { useParams } from "react-router-dom";
 import Spinner from "./../Spinner/Spinner";
 

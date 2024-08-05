@@ -1,15 +1,37 @@
 .CheckoutContainer {
-    height: 100vh;
+    min-height: 100vh;
 }
 
-h3 {
+.Title {
     font-size: 2em;
     margin-bottom: 20px;
     color: white;
 }
 
+.InfoContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .Cartel {
+    font-weight: bold;
     font-size: 2em;
     color: white;
-    height: 100vh;
+}
+
+.ButtonProducts {
+    width: 350px;
+}
+
+@media (max-width: 400px) {
+    .Cartel {
+        font-size: 1.5em;
+    }
+
+    .ButtonProducts {
+        width: 300px;
+    }
+
 }
