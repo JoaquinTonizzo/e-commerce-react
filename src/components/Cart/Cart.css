@@ -21,7 +21,14 @@
 }
 
 .ButtonClear, .ButtonCheckout {
-    margin: 10px;
+    margin: 0px 10px 10px 10px;
+}
+
+.Total {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
 
 @media (max-width: 400px) {
