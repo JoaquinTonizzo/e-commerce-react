@@ -37,6 +37,7 @@ Footer .Option {
         width: 100%;
         background-color: white;
         border-radius: 10px;
+        height: 500px;
     }
 
     .DetailImg {
@@ -54,6 +55,7 @@ Footer .Option {
         display: flex;
         flex-direction: column;
         margin: 20px;
+        height:fit-content;
     }
     
     .DetailImg {
