@@ -19,7 +19,7 @@ const Cart = () => {
     return (
         <div className='CartContainer'>
             {cart.map(p => <CartItem key={p.id} {...p} removeItem={removeItem} />)}
-            <p className='Total'>Total a pagar: {total.toFixed(2)}</p>
+            <p className='Total'>Total a pagar: ${total.toFixed(2)}</p>
             <div>
                 <button onClick={() => clearCart()} className='Button ButtonClear'>Limpiar carrito</button>
                 <Link to='/checkout' className='Button ButtonCheckout'>Checkout</Link>
