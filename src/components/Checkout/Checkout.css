@@ -3,7 +3,7 @@
 }
 
 .Title {
-    font-size: 2em;
+    font-size: 26px;
     margin-bottom: 20px;
     color: white;
 }
@@ -17,21 +17,21 @@
 
 .Cartel {
     font-weight: bold;
-    font-size: 2em;
+    font-size: 26px;
     color: white;
 }
 
 .ButtonProducts {
-    width: 350px;
+    width: 250px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
     .Cartel {
-        font-size: 1.5em;
+        font-size: 26px;
     }
 
     .ButtonProducts {
-        width: 300px;
+        width: 200px;
     }
 
 }

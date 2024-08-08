@@ -8,11 +8,13 @@
     height: 60px;
 }
 
-.Navbar h1 {
-    font-size: 26px;
-    color: white; 
-    margin-left: 20px;
-    transition: color 0.3s ease;
+.Navbar img {
+    height: 50px;
+    transition: transform 0.3s ease; 
+}
+
+.Navbar img:hover {
+    transform: translateX(10px);
 }
 
 .NavMenu {
@@ -29,8 +31,7 @@
 }
 
 .Navbar a:hover,
-.NavMenu a:hover,
-.Navbar h1:hover {
+.NavMenu a:hover {
     color: #646cff;
 }
 

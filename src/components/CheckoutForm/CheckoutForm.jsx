@@ -1,5 +1,6 @@
 import './CheckoutForm.css';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const CheckoutForm = ({ onConfirm }) => {
     const [name, setName] = useState('');
@@ -8,6 +9,16 @@ const CheckoutForm = ({ onConfirm }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        if (!name || !phone || !email) {
+            Swal.fire({
+                title: 'Existen campos incompletos',
+                text: 'Todos los campos deben ser completados con los datos correspondientes para realizar su pedido con exito.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
 
         const userData = {
             name,

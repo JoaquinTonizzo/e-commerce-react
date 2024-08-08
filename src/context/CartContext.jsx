@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import Swal from 'sweetalert2'; 
 
 export const CartContext = createContext({
     cart: []
@@ -28,7 +29,12 @@ export const CartProvider = ({ children }) => {
         if (!isInCart(item.id)) {
             setCart(prev => [...prev, { ...item, quantity }]);
         } else {
-            console.error("El producto ya fue agregado");
+            Swal.fire({
+                title: 'Producto ya agregado',
+                text: 'El producto ya fue agregado al carrito. Para modificar la cantidad ingresada debe eliminarlo del carrrito.',
+                icon: 'warning',
+                confirmButtonText: 'Aceptar'
+            });
         }
     };
 

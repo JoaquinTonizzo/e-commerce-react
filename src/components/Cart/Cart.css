@@ -8,12 +8,13 @@
 }
 
 .NoProducts {
-    font-size: 2em;
+    font-size: 26px;
+    margin: 0px;
     color: white;
 }
 
 .ButtonProducts {
-    width: 350px;
+    width: 250px;
 }
 
 .ButtonProducts, .ButtonClear, .ButtonCheckout {
@@ -31,13 +32,9 @@
     padding: 0;
 }
 
-@media (max-width: 400px) {
-
-    .NoProducts {
-        font-size: 1.5em;
-    }
+@media (max-width: 768px) {
 
     .ButtonProducts {
-        width: 300px;
+        width: 200px;
     }
 }
