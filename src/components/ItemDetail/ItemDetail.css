@@ -34,7 +34,7 @@ Footer .Option {
         display: flex;
         flex-direction: column;
         margin: 20px;
-        height:fit-content;
+        height: 90vh;
     }
     
     .DetailImg {
