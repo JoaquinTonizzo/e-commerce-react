@@ -44,6 +44,12 @@ const ItemListContainer = () => {
 
   return (
     <div className="ItemListContainer">
+      {!categoryId && !loading && !error && (
+        <div className="Welcome">
+          <h2>Bienvenido a nuestra tienda</h2>
+          <p>Explora nuestros productos y encuentra lo que necesitas.</p>
+        </div>
+      )}
       {products.length ? (
         <ItemList products={products} />
       ) : (

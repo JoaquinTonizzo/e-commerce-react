@@ -18,7 +18,7 @@ const NavBar = () => {
         <nav className='Navbar'>
             <a href="/"><img src="./logo.png" alt="Logo Online Store" /></a>
             <div className={`NavMenu ${showMenu ? 'show' : ''}`}>
-                <NavLink to="/" onClick={closeMenu}>All Products</NavLink>
+                <NavLink to="/" onClick={closeMenu}>Home</NavLink>
                 <NavLink to="/category/cellphone" onClick={closeMenu}>Phones</NavLink>
                 <NavLink to="/category/notebook" onClick={closeMenu}>Notebooks</NavLink>
                 <NavLink to="/category/smartwatch" onClick={closeMenu}>Smartwatches</NavLink>

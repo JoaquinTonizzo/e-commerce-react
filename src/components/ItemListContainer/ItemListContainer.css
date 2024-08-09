@@ -1,3 +1,8 @@
 .ItemListContainer {
     min-height: 100vh;
 }
+
+.Welcome {
+    color: white;
+    padding: 0px 10px;
+}

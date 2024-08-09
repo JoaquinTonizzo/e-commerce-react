@@ -26,6 +26,13 @@ const CheckoutForm = ({ onConfirm }) => {
             email
         };
 
+        Swal.fire({
+            title: 'Compra realizada con éxito',
+            text: 'A continuación verá el id de su orden. Nuestro staff se comunicará con usted a la brevedad.',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        });
+
         onConfirm(userData);
     };
 
