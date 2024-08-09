@@ -1,18 +1,15 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDX9meKRaH67YPx2a5nksvFELjR1sdCkRE",
-    authDomain: "react-tienda-98df9.firebaseapp.com",
-    projectId: "react-tienda-98df9",
-    storageBucket: "react-tienda-98df9.appspot.com",
-    messagingSenderId: "215963926518",
-    appId: "1:215963926518:web:e82902d2e47ae20440d1d7",
-    measurementId: "G-KK2PF24MT5"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
