@@ -7,13 +7,47 @@ const CheckoutForm = ({ onConfirm }) => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
 
+    const validateName = (name) => {
+        return name.length > 2; // Nombre debe tener al menos 3 caracteres
+    };
+
+    const validatePhone = (phone) => {
+        const phoneRegex = /^[0-9]{10}$/; // Validación simple para un número de 10 dígitos
+        return phoneRegex.test(phone);
+    };
+
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Validación simple de formato de email
+        return emailRegex.test(email);
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (!name || !phone || !email) {
+        if (!validateName(name)) {
             Swal.fire({
-                title: 'Existen campos incompletos',
-                text: 'Todos los campos deben ser completados con los datos correspondientes para realizar su pedido con exito.',
+                title: 'Nombre inválido',
+                text: 'El nombre debe tener al menos 3 caracteres.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
+
+        if (!validatePhone(phone)) {
+            Swal.fire({
+                title: 'Teléfono inválido',
+                text: 'El número de teléfono debe tener 10 dígitos.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            Swal.fire({
+                title: 'Email inválido',
+                text: 'Por favor, ingresa un email válido.',
                 icon: 'error',
                 confirmButtonText: 'Aceptar'
             });
@@ -25,13 +59,6 @@ const CheckoutForm = ({ onConfirm }) => {
             phone,
             email
         };
-
-        Swal.fire({
-            title: 'Compra realizada con éxito',
-            text: 'A continuación verá el id de su orden. Nuestro staff se comunicará con usted a la brevedad.',
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-        });
 
         onConfirm(userData);
     };
