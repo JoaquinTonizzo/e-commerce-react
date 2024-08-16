@@ -16,7 +16,7 @@ const NavBar = () => {
 
     return (
         <nav className='Navbar'>
-            <a href="/"><img src="./logo.png" alt="Logo Online Store" /></a>
+            <NavLink to="/"><img src="./logo.png" alt="Logo Online Store" /></NavLink>
             <div className={`NavMenu ${showMenu ? 'show' : ''}`}>
                 <NavLink to="/" onClick={closeMenu}>Home</NavLink>
                 <NavLink to="/category/cellphone" onClick={closeMenu}>Phones</NavLink>
