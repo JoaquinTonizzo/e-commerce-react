@@ -14,9 +14,9 @@
 
 ## Tecnologías Utilizadas 🛠️
 
+- **Librerías y Frameworks:** React, React Router, React Icons, SweetAlert2.
 - **Frontend:** HTML, CSS, JavaScript.
 - **Backend:** Firebase, Firestore Database.
-- **Librerías y Frameworks:** React, React Router, React Icons, SweetAlert2.
   
 ## Contacto
 Para más información, puedes contactar a [joaquintonizzo1@gmail.com](mailto:joaquintonizzo1@gmail.com).
